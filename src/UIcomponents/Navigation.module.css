@@ -1,0 +1,23 @@
+.layout {
+  background-color: #337d47;
+  color: white;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
+}
+
+.logo {
+  height: 6rem;
+}
+
+/* @media only screen and (min-width: 600px) {
+  .layout {
+    background-color: lightblue;
+  }
+} */
