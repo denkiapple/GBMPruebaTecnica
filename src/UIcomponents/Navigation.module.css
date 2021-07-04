@@ -13,6 +13,13 @@
   bottom: 0;
 }
 
+.branding {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
 .logo {
   height: 4rem;
 }
@@ -24,7 +31,11 @@ ul.routes {
 }
 
 .routes > li > * {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   min-width: 6rem;
   color: white;
   text-decoration: none;
