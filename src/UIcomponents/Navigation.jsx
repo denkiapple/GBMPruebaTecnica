@@ -1,13 +1,15 @@
+import { shape } from "prop-types";
+
 import { Link } from 'react-router-dom'
-import { Timeline, Info } from '@material-ui/icons';
+import { Timeline, Info, AccountCircle } from '@material-ui/icons';
 
 import styles from './Navigation.module.css';
 
-const Navigation = () => {
+const Navigation = ({ user }) => {
   return (
     <header className={styles.layout}>
       <div className={styles.branding}>
-        <h1>Uliu</h1>
+        <h1>Bienvenido {user?.firstName || "usuario"}</h1>
       </div>
 
       <ul className={styles.routes}>
@@ -23,9 +25,23 @@ const Navigation = () => {
             Acerca de
           </Link>
         </li>
+        <li>
+          <Link to="/user">
+            <AccountCircle />
+            Mi perfil
+          </Link>
+        </li>
       </ul>
     </header>
   );
 }
+
+Navigation.propTypes = {
+  user: shape({}),
+};
+
+Navigation.defaultProps = {
+  user: {}
+};
 
 export default Navigation;

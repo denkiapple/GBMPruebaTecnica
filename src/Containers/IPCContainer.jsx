@@ -1,11 +1,16 @@
 import { useEffect } from "react";
+import { connect } from 'react-redux';
+import { shape, arrayOf } from "prop-types";
 
-import { getData } from '../utils';
+import { Chart, Loader } from '../Components';
+import { getData } from '../actions';
 
-const IPCContainer = () => {
+const IPCContainer = ({ ipcData }) => {
   useEffect(() => {
     getData().then(data => console.log(data));
   }, []);
+
+  console.warn("CONTAINER", ipcData);
 
   return (
     <main>
@@ -15,8 +20,25 @@ const IPCContainer = () => {
       <p>
         Revisa el índice de precios y cotizaciones.
       </p>
-    </main>      
+
+      <Chart ipcData={ipcData} />
+      <Loader isLoading={true} />
+    </main>
   );
 }
 
-export default IPCContainer;
+IPCContainer.propTypes = {
+  ipcData: arrayOf(shape({})),
+};
+
+IPCContainer.defaultProps = {
+  ipcData: [],
+};
+
+const mapStateToProps = state => ({
+  ipcData: state
+});
+
+export default connect(
+  mapStateToProps,
+)(IPCContainer);

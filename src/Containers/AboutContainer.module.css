@@ -1,0 +1,38 @@
+.groupLinks {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+.groupLinks > a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #f6f6f6;
+  color: #333;
+  border: 0.08rem solid #333;
+  padding: 1rem 0.5rem;
+  border-radius: 0.5rem;
+
+  text-decoration: none;
+  font-size: 1rem;
+
+  transition: all 600ms;
+}
+
+.groupLinks > a:hover{
+  background-color: white;
+  border-color: #337d47;
+  color: #337d47;
+  box-shadow: 0.2rem 0.2rem 0.5rem #888;
+}
+
+
+/* TABLET & DESKTOP STYLES */
+@media only screen and (min-width: 600px) {
+  .groupLinks {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
