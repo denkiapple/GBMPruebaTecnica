@@ -6,13 +6,16 @@ const AboutContainer = () => {
   return (
     <main>
       <header>
-        <h1>Acerca de</h1>
+        <h1>Acerca de esta App</h1>
       </header>
 
       <section>
         <p>
           Esta es una app de prueba, desarrollada en React por Ulises Torner Campuzano.
-          Sin fines de lucro ni para uso en un ambiente productivo, vea la documentación y código en el repositorio de gitlab.
+          Sin fines de lucro ni para uso en un ambiente productivo, sino como parte de un proceso de selección para la posición de desarrollador front-end para le empresa GBM.
+        </p>
+        <p>
+          Se invita a ver la documentación y código en el repositorio de gitlab.
         </p>
       </section>
 
@@ -47,7 +50,13 @@ const AboutContainer = () => {
         <h4>Level 1</h4>
         <ul>
           <li>
-            Aplicación creada con React
+            Aplicación creada con React.
+          </li>
+          <li>
+            Consumo del servicio de IPC en Mocky.
+          </li>
+          <li>
+            Implementación de un gráfico para la visualización de los datos del servicio.
           </li>
         </ul>
 
@@ -58,15 +67,26 @@ const AboutContainer = () => {
           </li>
         </ul>
 
-        <h4>Bonus</h4>
+        <h4>Otros</h4>
         <ul>
           <li>
-            Diseño 100% responsivo
+            Diseño 100% responsivo implementado nativamente con CSS (Flex y Grids)
           </li>
           <li>
-            CSS Modules y Media Queries
+            Estilos propios, con CSS Modules y Media Queries
+          </li>
+          <li>
+            Manejo de múltiples vistas en una SPA con ReactRouter
           </li>
         </ul>
+      </section>
+
+      <section>
+        <p>
+          Gracias por su consideración, cualquier comentario o retroalimentación es bienvenida.
+        </p>
+        <h3>Contacto:</h3>
+        Ulises Torner Campuzano - utorner@gmail.com
       </section>
     </main>
   );

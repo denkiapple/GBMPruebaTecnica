@@ -29,9 +29,12 @@
   box-shadow: 0.2rem 0.2rem 0.5rem #888;
 }
 
+li {
+  margin-bottom: 0.5rem;
+}
 
 /* TABLET & DESKTOP STYLES */
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 800px) {
   .groupLinks {
     grid-template-columns: repeat(2, 1fr);
   }
