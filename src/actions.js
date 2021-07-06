@@ -9,6 +9,8 @@ export const getData = () => {
     },
   };
 
+  // TELL REDUCER A GET IS HAPPENING
+
   return fetch(IPC_URL, params)
     .then(res => {
       if (res.ok) {

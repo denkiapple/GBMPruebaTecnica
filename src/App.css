@@ -11,6 +11,9 @@ main {
   margin-bottom: 6rem;
 }
 
+section {
+  margin-bottom: 3rem;
+}
 
 /* @media only screen and (min-width: 600px) {
   main {

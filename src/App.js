@@ -1,3 +1,4 @@
+import { Provider } from 'react-redux';
 import {
   BrowserRouter as Router,
   Switch,
@@ -6,23 +7,26 @@ import {
 
 import { Navigation } from './UIcomponents';
 import { AboutContainer, IPCContainer } from './Containers';
+import { store } from './reducers';
 
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Navigation />
-        <Switch>
-          <Route path="/ipc">
-            <IPCContainer /> 
-          </Route>
-          <Route path="/about">
-            <AboutContainer />
-          </Route>
-        </Switch>
-      </Router>
+      <Provider store={store}>
+        <Router>
+          <Navigation />
+          <Switch>
+            <Route path="/ipc">
+              <IPCContainer /> 
+            </Route>
+            <Route path="/about">
+              <AboutContainer />
+            </Route>
+          </Switch>
+        </Router>
+      </Provider>
     </div>
   );
 }
