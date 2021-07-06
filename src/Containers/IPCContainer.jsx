@@ -1,16 +1,21 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from "react";
-import { connect } from 'react-redux';
-import { shape, arrayOf } from "prop-types";
+import { connect, useDispatch } from 'react-redux';
+import { shape, arrayOf, bool } from "prop-types";
 
 import { Chart, Loader } from '../Components';
 import { getData } from '../actions';
 
-const IPCContainer = ({ ipcData }) => {
+import styles from "./IPCContainer.module.css";
+
+const IPCContainer = ({ ipcData, isIPCLoading }) => {
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    getData().then(data => console.log(data));
+    if (!ipcData.length) getData(dispatch);
   }, []);
 
-  console.warn("CONTAINER", ipcData);
+  console.warn(Object.values(ipcData))
 
   return (
     <main>
@@ -22,21 +27,49 @@ const IPCContainer = ({ ipcData }) => {
       </p>
 
       <Chart ipcData={ipcData} />
-      <Loader isLoading={true} />
+      { typeof ipcData }
+
+      <section>
+        <h3>Plop</h3>
+        <table className={styles.table}>
+          <thead>
+            <tr>
+              <th>
+                uno
+              </th>
+              <th>dos</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <Loader isLoading={isIPCLoading} />
     </main>
   );
 }
 
 IPCContainer.propTypes = {
   ipcData: arrayOf(shape({})),
+  isIPCLoading: bool,
 };
 
 IPCContainer.defaultProps = {
   ipcData: [],
+  isIPCLoading: false,
 };
 
-const mapStateToProps = state => ({
-  ipcData: state
+const mapStateToProps = ({
+  data: ipcData,
+  isLoading: isIPCLoading,
+}) => ({
+  ipcData,
+  isIPCLoading,
 });
 
 export default connect(
