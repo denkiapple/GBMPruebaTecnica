@@ -1,9 +1,21 @@
+/* VARIABLES CSS */
+:root {
+  --color-white: #fff;
+  --color-white-obscure: #fefefe;
+  --color-brand: #337d47;
+  --color-brand-light: #338f4c;
+  --color-dark: #333;
+  --color-dark-palid: #666;
+  --color-dark-transparent: rgba(0, 0, 0, 0.5);
+}
+
+/* APP STYLES */
 .App {
   height: 100vh;
   width: 100vw;
   overflow: auto;
-  background-color: #fefefe;
-  color: #666;
+  background-color: var(--color-white-obscure);
+  color: var(--color-dark-palid);
 }
 
 main {

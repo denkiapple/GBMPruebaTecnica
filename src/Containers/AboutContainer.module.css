@@ -10,9 +10,9 @@
   align-items: center;
   justify-content: center;
 
-  background-color: #f6f6f6;
-  color: #333;
-  border: 0.08rem solid #333;
+  background-color: var(--color-white);
+  color: var(--color-dark);
+  border: 0.08rem solid var(--color-dark);
   padding: 1rem 0.5rem;
   border-radius: 0.5rem;
 
@@ -23,13 +23,12 @@
 }
 
 .groupLinks > a:hover{
-  background-color: white;
-  border-color: #337d47;
-  color: #337d47;
-  box-shadow: 0.2rem 0.2rem 0.5rem #888;
+  border-color: var(--color-brand);
+  color: var(--color-brand);
+  box-shadow: 0.2rem 0.2rem 0.5rem var(--color-dark-transparent);
 }
 
-li {
+section li {
   margin-bottom: 0.5rem;
 }
 

@@ -1,7 +1,7 @@
 .layout {
   box-sizing: border-box;
-  background-color: #337d47;
-  color: white;
+  background-color: var(--color-brand);
+  color: var(--color-white);
 
   display: flex;
   flex-direction: row;
@@ -35,7 +35,7 @@ ul.routes {
   align-items: center;
 
   min-width: 4rem;
-  color: white;
+  color: var(--color-white);
   text-decoration: none;
   text-align: center;
   padding: 0.5rem 1rem;
@@ -45,7 +45,7 @@ ul.routes {
 }
 
 .routes > li > *:hover {
-  background-color: #338f4c;
+  background-color: var(--color-brand-light);
 }
 
 /* TABLET & DESKTOP STYLES */
@@ -63,7 +63,7 @@ ul.routes {
     position: absolute;
     top: 0;
     left: 0;
-    box-shadow: -0.25rem -0.25rem 0.5rem 0.25rem rgba(0, 0, 0, 0.25);
+    box-shadow: 0.15rem 0 1rem 0.25rem rgba(0, 0, 0, 0.25);
   }
 
   .layout > div, .layout > ul.routes {
