@@ -76,6 +76,9 @@ const AboutContainer = () => {
             Estilos propios, con CSS Modules y Media Queries
           </li>
           <li>
+            Organización de estilos con variables CSS
+          </li>
+          <li>
             Manejo de múltiples vistas en una SPA con ReactRouter
           </li>
         </ul>

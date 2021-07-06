@@ -28,18 +28,9 @@ const Chart = ({ ipcData }) => {
   };
 
   return (
-    <>
-      <section>
-        <Line data={chartData} options={chartOptions} />
-      </section>
-
-      <section>
-        <h3>Plop</h3>
-        <p>
-          Lorem ipsum...
-        </p>
-      </section>
-    </>
+    <section>
+      <Line data={chartData} options={chartOptions} />
+    </section>
   );
 }
 
