@@ -2,10 +2,13 @@
 :root {
   --color-white: #fff;
   --color-white-obscure: #fefefe;
+
   --color-brand: #337d47;
   --color-brand-light: #338f4c;
+  --color-brand-obscure: #2b6e3d;
+
   --color-dark: #333;
-  --color-dark-palid: #666;
+  --color-dark-light: #666;
   --color-dark-transparent: rgba(0, 0, 0, 0.5);
 }
 
@@ -15,7 +18,7 @@
   width: 100vw;
   overflow: auto;
   background-color: var(--color-white-obscure);
-  color: var(--color-dark-palid);
+  color: var(--color-dark-light);
 }
 
 main {
