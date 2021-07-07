@@ -6,10 +6,12 @@ import { Timeline, Info, AccountCircle } from '@material-ui/icons';
 import styles from './Navigation.module.css';
 
 const Navigation = ({ user }) => {
+  const userName = (user && user.data && user.data.email) ? user.data.email.split("@")[0] : "usuario";
+
   return (
     <header className={styles.layout}>
       <div className={styles.branding}>
-        <h1>Bienvenido {user?.firstName || "usuario"}</h1>
+        <h1>Bienvenido {userName}</h1>
       </div>
 
       <ul className={styles.routes}>

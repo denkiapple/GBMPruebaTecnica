@@ -6,6 +6,7 @@ import {
   Redirect
 } from 'react-router-dom'
 
+// Componentes
 import { Navigation } from './UIcomponents';
 import {
   AuthenticationContainer,
@@ -15,15 +16,24 @@ import {
 } from './Containers';
 import { store } from './reducers';
 
+// Firebase
+import 'firebase/auth';
+import { useFirebaseApp, useUser } from 'reactfire';
+
+// App CSS
 import './App.css';
 
 function App() {
+  const firebase = useFirebaseApp();
+  const user = useUser();
+console.warn(user)
   return (
     <div className="App">
       <Provider store={store}>
-        <AuthenticationContainer />
+        {!user && (<AuthenticationContainer firebase={firebase} />)}
+
         <Router>
-          <Navigation />
+          <Navigation user={user} />
           <Switch>
             <Route path="/ipc">
               <IPCContainer /> 
