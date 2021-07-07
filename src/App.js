@@ -26,9 +26,7 @@ import './App.css';
 function App() {
   const firebase = useFirebaseApp();
   const user = useUser();
-
   const userInfo = user.data;
-  console.warn(user, userInfo)
 
   return (
     <div className="App">
