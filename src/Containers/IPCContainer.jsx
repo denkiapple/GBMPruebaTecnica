@@ -14,11 +14,32 @@ const IPCContainer = ({ ipcData, isIPCLoading }) => {
     if (!ipcData.length) getData(dispatch);
   }, []);
 
+  // Transforma un Date a DD/MM/YYYY - HH:MM
+  const dateFormatter = date => {
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
+    const year = date.getFullYear();
+    const hours = date.getHours();
+    const mins = date.getMinutes();
+
+    const fhours = hours < 10 ? "0"+hours : hours;
+    const fmins = mins < 10 ? "0"+mins : mins
+
+    return `${day}/${month}/${year} - ${fhours}:${fmins}`;
+  };
+
   // Ordena por fecha los valores que responde el API
   const entries = Object.values(ipcData)
-    .sort((a,b) => (new Date(a) - new Date(b)));
+    .sort((a,b) => (new Date(a) - new Date(b)))
+    .map(e => {
+      const formattedDate = dateFormatter(new Date(e.date));
+      return {
+        ...e,
+        formattedDate,
+      }
+    });
 
-  const labels = entries.map(e => new Date(e.date).toTimeString());
+  const labels = entries.map(e => e.formattedDate);
   const data = entries.map(e => e.price);
 
   return (
