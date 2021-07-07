@@ -1,16 +1,16 @@
 import { Line } from "react-chartjs-2";
 import { shape, arrayOf } from "prop-types";
 
-const Chart = ({ ipcData }) => {
+const Chart = ({ labels, data }) => {
   const chartData = {
-    labels: ['1', '2', '3', '4', '5', '6'],
+    labels: labels,
     datasets: [
       {
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
+        label: 'Precio',
+        data: data,
         fill: false,
-        backgroundColor: 'rgb(255, 99, 132)',
-        borderColor: 'rgba(255, 99, 132, 0.2)',
+        backgroundColor: '#337d47',
+        borderColor: '#337d47',
       },
     ],
   };
@@ -35,11 +35,13 @@ const Chart = ({ ipcData }) => {
 }
 
 Chart.propTypes = {
-  ipcData: arrayOf(shape({})),
+  labels: arrayOf(shape({})),
+  data: arrayOf(shape({})),
 };
 
 Chart.defaultProps = {
-  ipcData: [],
+  labels: [],
+  data: [],
 };
 
 export default Chart;

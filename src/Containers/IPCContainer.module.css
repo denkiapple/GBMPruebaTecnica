@@ -1,9 +1,0 @@
-.table {
-  border: 0.05rem solid var(--color-dark);
-  width: 100%;
-}
-
-.table td{
-  border-right: 0.05rem solid var(--color-dark);
-  padding: 0.25rem 0.5rem;
-}

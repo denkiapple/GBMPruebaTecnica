@@ -53,10 +53,10 @@ const AboutContainer = () => {
             Aplicación creada con React.
           </li>
           <li>
-            Consumo del servicio de IPC en Mocky.
+            Consumo del servicio de IPC en Mocky. (fetch)
           </li>
           <li>
-            Implementación de un gráfico para la visualización de los datos del servicio.
+            Implementación de un gráfico para la visualización de los datos del servicio. (chartjs)
           </li>
         </ul>
 
@@ -70,16 +70,16 @@ const AboutContainer = () => {
         <h4>Otros</h4>
         <ul>
           <li>
-            Diseño 100% responsivo implementado nativamente con CSS (Flex y Grids)
+            Diseño 100% responsivo implementado nativamente con CSS. (Flex y Grids)
           </li>
           <li>
-            Estilos propios, con CSS Modules y Media Queries
+            Estilos propios, con CSS Modules y Media Queries.
           </li>
           <li>
-            Organización de estilos con variables CSS
+            Organización de estilos con variables CSS.
           </li>
           <li>
-            Manejo de múltiples vistas en una SPA con ReactRouter
+            Manejo de múltiples vistas en una SPA con ReactRouter.
           </li>
         </ul>
       </section>

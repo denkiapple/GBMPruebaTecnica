@@ -3,19 +3,23 @@ import { useEffect } from "react";
 import { connect, useDispatch } from 'react-redux';
 import { shape, arrayOf, bool } from "prop-types";
 
-import { Chart, Loader } from '../Components';
+import { Chart, Loader, Table } from '../Components';
 import { getData } from '../actions';
-
-import styles from "./IPCContainer.module.css";
 
 const IPCContainer = ({ ipcData, isIPCLoading }) => {
   const dispatch = useDispatch();
 
+  // Pide los valores de IPC al cargar el componente
   useEffect(() => {
     if (!ipcData.length) getData(dispatch);
   }, []);
 
-  console.warn(Object.values(ipcData))
+  // Ordena por fecha los valores que responde el API
+  const entries = Object.values(ipcData)
+    .sort((a,b) => (new Date(a) - new Date(b)));
+
+  const labels = entries.map(e => new Date(e.date).toTimeString());
+  const data = entries.map(e => e.price);
 
   return (
     <main>
@@ -26,27 +30,11 @@ const IPCContainer = ({ ipcData, isIPCLoading }) => {
         Revisa el índice de precios y cotizaciones.
       </p>
 
-      <Chart ipcData={ipcData} />
-      { typeof ipcData }
+      <Chart labels={labels} data={data} />
 
       <section>
-        <h3>Plop</h3>
-        <table className={styles.table}>
-          <thead>
-            <tr>
-              <th>
-                uno
-              </th>
-              <th>dos</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
+        <h3>{entries.length || "Sin"} Registros</h3>
+        <Table entries={entries} />
       </section>
 
       <Loader isLoading={isIPCLoading} />
