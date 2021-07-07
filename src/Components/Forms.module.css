@@ -12,6 +12,11 @@
   background-color: var(--color-white);
   padding: 1rem;
   border-radius: 0.5rem;
+  transition: all 600ms;
+}
+
+.layout:hover {
+  box-shadow: 0.2rem 0.2rem 3rem var(--color-dark-transparent);
 }
 
 .overlay {
@@ -20,8 +25,10 @@
   bottom: 0;
   left: 0;
   right: 0;
+  height: 100vh;
+  width: 100vw;
   z-index: 9;
-  background-color: var(--color-dark-transparent);
+  background-color: var(--color-brand);
 }
 
 .title {
@@ -45,6 +52,8 @@
   font-size: 1rem;
   padding: 0.5rem 0.8rem;
   margin-bottom: 1.5rem;
+  border-radius: 0.5rem;
+  border: 0.01rem solid var(--color-dark);
 }
 
 .secondaryBtn {
