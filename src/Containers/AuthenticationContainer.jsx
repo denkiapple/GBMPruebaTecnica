@@ -1,13 +1,22 @@
+import { useState } from "react";
 import { shape } from "prop-types";
-import { AuthenticationForm } from '../Components';
+import { RegisterForm, LoginForm } from '../Components';
 
 const AuthenticationContainer = ({ firebase }) => {
-  const handleSubmit = async (email, password) => {
+  const [form, setForm] = useState(1);
+
+  const handleRegister = async (email, password) => {
     await firebase.auth().createUserWithEmailAndPassword(email, password);
   };
 
-  return (
-    <AuthenticationForm handleSubmit={handleSubmit} />
+  const handleLogin = async (email, password) => {
+    await firebase.auth().signInWithEmailAndPassword(email, password);
+  };
+
+  return form === 1 ? (
+    <RegisterForm handleSubmit={handleRegister} setForm={setForm} />
+  ) : (
+    <LoginForm handleSubmit={handleLogin} setForm={setForm} />
   );
 }
 

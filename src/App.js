@@ -26,28 +26,33 @@ import './App.css';
 function App() {
   const firebase = useFirebaseApp();
   const user = useUser();
-console.warn(user)
+
+  const userInfo = user.data;
+  console.warn(user, userInfo)
+
   return (
     <div className="App">
-      <Provider store={store}>
-        {!user && (<AuthenticationContainer firebase={firebase} />)}
-
-        <Router>
-          <Navigation user={user} />
-          <Switch>
-            <Route path="/ipc">
-              <IPCContainer /> 
-            </Route>
-            <Route path="/about">
-              <AboutContainer />
-            </Route>
-            <Route path="/user">
-              <ProfileContainer />
-            </Route>
-            <Redirect exact from="/" to="/ipc" />
-          </Switch>
-        </Router>
-      </Provider>
+      {!userInfo ? (
+        <AuthenticationContainer firebase={firebase} />
+      ) : (
+        <Provider store={store}>
+          <Router>
+            <Navigation user={user} />
+            <Switch>
+              <Route path="/ipc">
+                <IPCContainer /> 
+              </Route>
+              <Route path="/about">
+                <AboutContainer />
+              </Route>
+              <Route path="/user">
+                <ProfileContainer userInfo={userInfo} firebase={firebase} />
+              </Route>
+              <Redirect exact from="/" to="/ipc" />
+            </Switch>
+          </Router>
+        </Provider>
+      )}
     </div>
   );
 }

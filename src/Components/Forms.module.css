@@ -1,3 +1,5 @@
+/* Hoja de estilos compartida entre RegisterForm y LoginForm */
+
 .layout {
   position: absolute;
   top: 50vh;
@@ -23,9 +25,9 @@
 }
 
 .title {
-  font-size: 1.5rem;
+  font-size: 2rem;
   text-align: center;
-  margin: 1.5rem 0;
+  margin: 1rem 0;
   color: var(--color-brand);
 }
 
@@ -43,6 +45,22 @@
   font-size: 1rem;
   padding: 0.5rem 0.8rem;
   margin-bottom: 1.5rem;
+}
+
+.secondaryBtn {
+  margin: 1rem 0;
+  width: 100%;
+  padding: 0.8rem 0;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  color: var(--color-brand);
+  background-color: var(--color-white);
+  cursor: pointer;
+}
+
+.secondaryBtn:hover {
+  background-color: var(--color-white-darkened);
 }
 
 .submitBtn {

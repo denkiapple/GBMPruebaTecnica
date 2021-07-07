@@ -1,9 +1,9 @@
 import { useState } from "react";
 
 import { func } from "prop-types";
-import styles from './AuthenticationForm.module.css';
+import styles from './Forms.module.css';
 
-const AuthenticationForm = ({ handleSubmit }) => {
+const RegisterForm = ({ handleSubmit, setForm }) => {
   const [username, setUserName] = useState();
   const [password, setPassword] = useState();
 
@@ -20,7 +20,11 @@ const AuthenticationForm = ({ handleSubmit }) => {
       return handleSubmit(username, password);
     }
 
-    return alert("Verifica que sea un correo válido y tu contraseña tenga al menos 6 caracteres");
+    return alert("Verifica que sean un correo y contraseña válidos");
+  };
+
+  const goToRegister = () => {
+    setForm(1);
   };
 
   return (
@@ -28,8 +32,13 @@ const AuthenticationForm = ({ handleSubmit }) => {
       <div className={styles.layout}>
         <div className={styles.container}>
           <h3 className={styles.title}>
-            ¡Regístrate!
+            Bienvenido de vuelta
           </h3>
+
+          <button onClick={goToRegister} className={styles.secondaryBtn}>
+            Deseo registrarme.
+          </button>
+
           <form onSubmit={onSubmit}>
             <div>
               <label className={styles.label}>
@@ -46,7 +55,7 @@ const AuthenticationForm = ({ handleSubmit }) => {
 
             <div>
               <label className={styles.label}>
-                Contraseña (mínimo 6 caracteres)
+                Contraseña
               </label>
               <input
                 type="password"
@@ -58,7 +67,7 @@ const AuthenticationForm = ({ handleSubmit }) => {
             </div>
 
             <button type="submit" className={styles.submitBtn}>
-              Registrarme
+              Ingresar
             </button>
           </form>
         </div>
@@ -68,12 +77,14 @@ const AuthenticationForm = ({ handleSubmit }) => {
   );
 }
 
-AuthenticationForm.propTypes = {
+RegisterForm.propTypes = {
   handleSubmit: func,
+  setForm: func,
 };
 
-AuthenticationForm.defaultProps = {
+RegisterForm.defaultProps = {
   handleSubmit: () => {},
+  setForm: () => {},
 };
 
-export default AuthenticationForm;
+export default RegisterForm;

@@ -63,7 +63,13 @@ const AboutContainer = () => {
         <h4>Level 2</h4>
         <ul>
           <li>
-            Lorem ipsum...
+            Autentificación de usuarios. (integración con firebase)
+          </li>
+          <li>
+            Registro de usuarios con correo y contraseña.
+          </li>
+          <li>
+            Login y logout, manejo de sesión de usuario.
           </li>
         </ul>
 

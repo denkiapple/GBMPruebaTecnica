@@ -1,0 +1,23 @@
+.paragraph {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.buttonOutline {
+  margin: 1rem 0;
+  width: 100%;
+  padding: 0.8rem 0;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  border: 0.1rem solid var(--color-brand);
+  background-color: var(--color-white);
+  color: var(--color-brand);
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 600ms;
+}
+
+.buttonOutline:hover {
+  background-color: var(--color-brand);
+  color: var(--color-white);
+}

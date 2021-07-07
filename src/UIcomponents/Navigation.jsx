@@ -11,7 +11,7 @@ const Navigation = ({ user }) => {
   return (
     <header className={styles.layout}>
       <div className={styles.branding}>
-        <h1>Bienvenido {userName}</h1>
+        <h1>¡Hola de nuevo {userName}!</h1>
       </div>
 
       <ul className={styles.routes}>
